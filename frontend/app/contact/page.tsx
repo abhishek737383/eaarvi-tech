@@ -99,11 +99,11 @@ export default function ContactSimple() {
   }
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="min-h-screen py-12 px-4 bg-gradient-to-b from-white to-zinc-50 md:dark:from-zinc-900 md:dark:to-zinc-800">
       <div className="mx-auto max-w-3xl">
-        <section className="rounded-2xl bg-white/80 p-8 shadow-lg">
-          <h1 className="text-2xl font-bold">Let’s Build a High-Performing Sales Team</h1>
-          <p className="mt-2 text-sm text-zinc-600">
+        <section className="rounded-2xl bg-white/80 md:dark:bg-zinc-900/75 p-8 shadow-lg">
+          <h1 className="text-2xl font-bold md:dark:text-zinc-100">Let’s Build a High-Performing Sales Team</h1>
+          <p className="mt-2 text-sm text-zinc-600 md:dark:text-zinc-300">
             Fill the form — on submit your Gmail (or default mail client) will open with a prefilled message to us.
           </p>
 
@@ -115,14 +115,14 @@ export default function ContactSimple() {
                 value={form.name}
                 onChange={update}
                 placeholder="Name"
-                className="px-3 py-2 rounded-lg border"
+                className="px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
               />
               <input
                 name="org"
                 value={form.org}
                 onChange={update}
                 placeholder="Organization / Institution"
-                className="px-3 py-2 rounded-lg border"
+                className="px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
               />
             </div>
 
@@ -134,7 +134,7 @@ export default function ContactSimple() {
                 value={form.email}
                 onChange={update}
                 placeholder="Email"
-                className="px-3 py-2 rounded-lg border"
+                className="px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
               />
               <input
                 required
@@ -142,7 +142,7 @@ export default function ContactSimple() {
                 value={form.mobile}
                 onChange={update}
                 placeholder="Mobile"
-                className="px-3 py-2 rounded-lg border"
+                className="px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
               />
             </div>
 
@@ -150,7 +150,7 @@ export default function ContactSimple() {
               name="program"
               value={form.program}
               onChange={update}
-              className="w-full px-3 py-2 rounded-lg border"
+              className="w-full px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
             >
               <option>Sales Training</option>
               <option>Field Coaching</option>
@@ -165,7 +165,7 @@ export default function ContactSimple() {
               onChange={update}
               rows={5}
               placeholder="Message / Requirement"
-              className="w-full px-3 py-2 rounded-lg border"
+              className="w-full px-3 py-2 rounded-lg border border-zinc-200 md:dark:border-zinc-700 bg-white md:dark:bg-zinc-800 text-zinc-900 md:dark:text-zinc-100"
             />
 
             <div className="flex items-center justify-between gap-3">
@@ -178,11 +178,11 @@ export default function ContactSimple() {
                 {sending ? "Opening mail..." : "Request a Call Back"}
               </motion.button>
 
-              <div className="text-xs text-zinc-500">We respect your privacy — no spam.</div>
+              <div className="text-xs text-zinc-500 md:dark:text-zinc-400">We respect your privacy — no spam.</div>
             </div>
           </form>
 
-          <div className="mt-6 text-sm text-zinc-600">
+          <div className="mt-6 text-sm text-zinc-600 md:dark:text-zinc-300">
             <div>Email: business@eaarvitech.com</div>
             <div>Phone: +91-8433965315</div>
             <div>Office: Navi Mumbai, Maharashtra, India</div>

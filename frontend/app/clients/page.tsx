@@ -96,7 +96,7 @@ function CaseCard({ c, onOpen }: { c: CaseStudy; onOpen: (c: CaseStudy) => void 
       variants={cardVariant}
       whileHover={reduce ? {} : { y: -6 }}
       transition={{ type: "spring", stiffness: 220, damping: 18 }}
-      className="min-w-[280px] md:min-w-0 max-w-sm rounded-2xl p-5 bg-white/80 dark:bg-zinc-900/55 border border-zinc-100 dark:border-zinc-800 shadow-sm"
+      className="min-w-[280px] md:min-w-0 max-w-sm rounded-2xl p-5 bg-white/80 md:dark:bg-zinc-900/55 border border-zinc-100 md:dark:border-zinc-800 shadow-sm"
     >
       <div className="flex items-start gap-4">
         <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-500 text-white flex items-center justify-center font-bold">
@@ -104,11 +104,11 @@ function CaseCard({ c, onOpen }: { c: CaseStudy; onOpen: (c: CaseStudy) => void 
         </div>
 
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-slate-900">{c.title}</h3>
-          <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300 line-clamp-3">{c.summary}</p>
+          <h3 className="text-lg font-semibold text-slate-900 md:dark:text-zinc-100">{c.title}</h3>
+          <p className="mt-2 text-sm text-zinc-600 md:dark:text-zinc-300 line-clamp-3">{c.summary}</p>
 
           <div className="mt-4 flex items-center justify-between gap-3">
-            <div className="text-xs text-zinc-500">{c.engagement}</div>
+            <div className="text-xs text-zinc-500 md:dark:text-zinc-400">{c.engagement}</div>
             <button
               onClick={() => onOpen(c)}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-600 text-white text-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
@@ -152,40 +152,40 @@ function CaseModal({ caseData, onClose }: { caseData: CaseStudy | null; onClose:
           aria-modal="true"
           role="dialog"
         >
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm md:dark:bg-black/55" onClick={onClose} />
 
           <motion.div
             initial={{ y: 18, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 18, opacity: 0, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 260, damping: 26 }}
-            className="relative w-full max-w-4xl rounded-2xl bg-white dark:bg-zinc-900/75 p-6 shadow-2xl outline-none"
+            className="relative w-full max-w-4xl rounded-2xl bg-white md:dark:bg-zinc-900/75 p-6 shadow-2xl outline-none"
             tabIndex={-1}
             ref={modalRef}
           >
             <header className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="text-xl font-bold">{caseData.title}</h2>
-                <div className="mt-1 text-sm text-zinc-500">
+                <h2 className="text-xl font-bold md:dark:text-zinc-100">{caseData.title}</h2>
+                <div className="mt-1 text-sm text-zinc-500 md:dark:text-zinc-400">
                   {caseData.client} • {caseData.engagement}
                 </div>
               </div>
 
               <button
                 onClick={onClose}
-                className="rounded-md px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 focus:outline-none"
+                className="rounded-md px-3 py-1 text-sm bg-zinc-100 md:dark:bg-zinc-800 focus:outline-none"
                 aria-label="Close case modal"
               >
                 <X className="w-4 h-4" />
               </button>
             </header>
 
-            <div className="mt-4 space-y-4 text-sm text-zinc-700 dark:text-zinc-300">
+            <div className="mt-4 space-y-4 text-sm text-zinc-700 md:dark:text-zinc-300">
               <p>{caseData.details}</p>
 
-              <figure className="border-l-4 border-indigo-300 pl-4 italic text-zinc-800 dark:text-zinc-200">
+              <figure className="border-l-4 border-indigo-300 pl-4 italic text-zinc-800 md:dark:text-zinc-200">
                 “{caseData.quote}”
-                <figcaption className="mt-2 font-medium text-xs text-zinc-500">— {caseData.contact}</figcaption>
+                <figcaption className="mt-2 font-medium text-xs text-zinc-500 md:dark:text-zinc-400">— {caseData.contact}</figcaption>
               </figure>
 
               <div className="mt-4 flex flex-wrap gap-3">
@@ -223,13 +223,13 @@ export default function CaseStudiesPage() {
   }
 
   return (
-    <main className="min-h-screen py-12 bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-800">
+    <main className="min-h-screen py-12 bg-gradient-to-b from-white to-zinc-50 md:dark:from-zinc-900 md:dark:to-zinc-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.section initial="hidden" animate="show" variants={pageVariant} className="rounded-3xl bg-white/70 dark:bg-zinc-900/55 p-6 md:p-10 shadow-lg">
+        <motion.section initial="hidden" animate="show" variants={pageVariant} className="rounded-3xl bg-white/70 md:dark:bg-zinc-900/55 p-6 md:p-10 shadow-lg">
           <div className="md:flex md:items-center md:justify-between gap-6">
             <div className="max-w-2xl">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold">Client Success Stories & Testimonials</h1>
-              <p className="mt-3 text-sm md:text-base text-zinc-600 dark:text-zinc-300">Real engagements, measurable outcomes. Browse client case studies, success metrics and feedback from businesses who grew with eAarvi Tech.</p>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold md:dark:text-zinc-100">Client Success Stories & Testimonials</h1>
+              <p className="mt-3 text-sm md:text-base text-zinc-600 md:dark:text-zinc-300">Real engagements, measurable outcomes. Browse client case studies, success metrics and feedback from businesses who grew with eAarvi Tech.</p>
             </div>
 
             <div className="mt-4 md:mt-0 flex gap-3">
@@ -241,12 +241,12 @@ export default function CaseStudiesPage() {
 
         <motion.section className="mt-8 hidden md:grid md:grid-cols-2 gap-6">
           {CASES.slice(0, 2).map((c) => (
-            <motion.article key={c.id} variants={cardVariant} className="rounded-2xl bg-white/85 dark:bg-zinc-900/60 p-6 shadow-md">
+            <motion.article key={c.id} variants={cardVariant} className="rounded-2xl bg-white/85 md:dark:bg-zinc-900/60 p-6 shadow-md">
               <div className="flex items-start gap-4">
                 <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-500 text-white font-bold flex items-center justify-center">{initialsFromClient(c.client)}</div>
                 <div>
-                  <h3 className="text-xl font-semibold">{c.title}</h3>
-                  <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{c.summary}</p>
+                  <h3 className="text-xl font-semibold md:dark:text-zinc-100">{c.title}</h3>
+                  <p className="mt-2 text-sm text-zinc-600 md:dark:text-zinc-300">{c.summary}</p>
                   <div className="mt-4 flex items-center gap-3">
                     <button onClick={() => setActive(c)} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white">Read case</button>
                     <a href="/contact" className="text-sm text-indigo-600">Talk to the client</a>
@@ -259,11 +259,11 @@ export default function CaseStudiesPage() {
 
         <section className="mt-10">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold">More success stories</h3>
+            <h3 className="text-lg font-semibold md:dark:text-zinc-100">More success stories</h3>
 
             <div className="hidden md:flex items-center gap-2">
-              <button onClick={scrollPrev} aria-label="Previous" className="rounded-full p-2 bg-white/80 border shadow-sm"><ChevronLeft /></button>
-              <button onClick={scrollNext} aria-label="Next" className="rounded-full p-2 bg-white/80 border shadow-sm"><ChevronRight /></button>
+              <button onClick={scrollPrev} aria-label="Previous" className="rounded-full p-2 bg-white/80 md:dark:bg-zinc-800 border shadow-sm"><ChevronLeft /></button>
+              <button onClick={scrollNext} aria-label="Next" className="rounded-full p-2 bg-white/80 md:dark:bg-zinc-800 border shadow-sm"><ChevronRight /></button>
             </div>
           </div>
 
@@ -281,8 +281,8 @@ export default function CaseStudiesPage() {
 
         <section className="mt-10 rounded-2xl bg-gradient-to-r from-indigo-50 to-white p-6 shadow-inner flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h4 className="text-lg font-semibold">Trusted by businesses across India</h4>
-            <p className="mt-2 text-sm text-zinc-600">From sales development to technical software training, we enable measurable improvements.</p>
+            <h4 className="text-lg font-semibold md:dark:text-zinc-100">Trusted by businesses across India</h4>
+            <p className="mt-2 text-sm text-zinc-600 md:dark:text-zinc-300">From sales development to technical software training, we enable measurable improvements.</p>
           </div>
 
           <div className="flex gap-3">
@@ -291,7 +291,7 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        <div className="mt-8 text-center text-sm text-zinc-500">© {new Date().getFullYear()} eAarvi Tech — Real results, measurable growth</div>
+        <div className="mt-8 text-center text-sm text-zinc-500 md:dark:text-zinc-400">© {new Date().getFullYear()} eAarvi Tech — Real results, measurable growth</div>
       </div>
 
       <CaseModal caseData={active} onClose={() => setActive(null)} />
