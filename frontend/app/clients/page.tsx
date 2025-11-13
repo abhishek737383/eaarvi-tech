@@ -53,7 +53,7 @@ const CASES: CaseStudy[] = [
     details:
       "We restructured product positioning, optimized channel performance, and implemented disciplined follow-ups. Outcome: Saitech rooted out competition in key territories and achieved steady growth in high-value projects.",
     quote:
-      "The consulting engagement with eAarvi Tech completely transformed our sales structure. We now lead our segment in key regions.",
+      "The consulting engagement with eaarvi Tech completely transformed our sales structure. We now lead our segment in key regions.",
   },
   {
     id: "unify",
@@ -204,7 +204,7 @@ function CaseModal({ caseData, onClose }: { caseData: CaseStudy | null; onClose:
   );
 }
 
-export default function CaseStudiesPage(): JSX.Element {
+export default function CaseStudiesPage() {
   const [active, setActive] = useState<CaseStudy | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const reduce = useReducedMotion();
@@ -243,9 +243,7 @@ export default function CaseStudiesPage(): JSX.Element {
           {CASES.slice(0, 2).map((c) => (
             <motion.article key={c.id} variants={cardVariant} className="rounded-2xl bg-white/85 dark:bg-zinc-900/60 p-6 shadow-md">
               <div className="flex items-start gap-4">
-                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-500 text-white font-bold flex items-center justify-center">
-                  {initialsFromClient(c.client)}
-                </div>
+                <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-500 text-white font-bold flex items-center justify-center">{initialsFromClient(c.client)}</div>
                 <div>
                   <h3 className="text-xl font-semibold">{c.title}</h3>
                   <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{c.summary}</p>
@@ -300,4 +298,3 @@ export default function CaseStudiesPage(): JSX.Element {
     </main>
   );
 }
-n
