@@ -171,7 +171,7 @@ export default function Footer() {
 
                 <div className="mt-1 flex items-center justify-center sm:justify-end gap-2 text-xs text-zinc-500 md:dark:text-zinc-400">
                   <span>
-                    Site by{" "}
+                    Designed by{" "}
                     <a
                       href="#"
                       onClick={(e) => {
