@@ -38,7 +38,7 @@ export default function Navbar() {
       className="sticky top-0 z-50 backdrop-blur bg-white/70 shadow-md"
       role="banner"
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 flex items-center justify-between h-16">
+      <div className="mx-full px-4 md:px-6 flex items-center justify-between h-16">
         {/* ---- LOGO SECTION ---- */}
         <Link href="/" className="flex items-center gap-3 group" aria-label="Go to home">
           <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
