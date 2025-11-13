@@ -234,7 +234,7 @@ export default function CaseStudiesPage() {
 
             <div className="mt-4 md:mt-0 flex gap-3">
               <a href="/contact" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white">Talk to Our Clients</a>
-              <a href="/case-studies" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border">View All Case Studies</a>
+              <a href="#" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border">View All Case Studies</a>
             </div>
           </div>
         </motion.section>
@@ -287,7 +287,7 @@ export default function CaseStudiesPage() {
 
           <div className="flex gap-3">
             <a href="/contact" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white"><MessageSquare /> Talk to our clients</a>
-            <a href="/case-studies" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border">View More Case Studies</a>
+            <a href="#" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border">View More Case Studies</a>
           </div>
         </section>
 
