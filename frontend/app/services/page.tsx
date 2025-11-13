@@ -1,13 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Briefcase, MapPin, Clock, Layers, BookOpen, Download, Play } from "lucide-react";
-
-/**
- * Services page — premium, responsive, fast animations
- * File: app/services/page.jsx
- */
 
 /* ---------- simple animation variants (fast & snappy) ---------- */
 const containerVariants = {
@@ -17,14 +12,27 @@ const containerVariants = {
     y: 0,
     transition: { staggerChildren: 0.06, when: "beforeChildren", duration: 0.28 },
   },
-};
+} as const;
 const itemVariant = {
   hidden: { opacity: 0, y: 8 },
   show: { opacity: 1, y: 0, transition: { duration: 0.28 } },
+} as const;
+
+/* ---------- Types ---------- */
+type AccordionProps = {
+  title: string;
+  children?: ReactNode;
+};
+
+type ServiceCardProps = {
+  title: string;
+  Icon: React.ComponentType<any>;
+  children?: ReactNode;
+  accent?: string;
 };
 
 /* ---------- Accordion (accessible, animated) ---------- */
-function Accordion({ title, children }) {
+function Accordion({ title, children }: AccordionProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
 
@@ -43,7 +51,13 @@ function Accordion({ title, children }) {
           aria-hidden
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M12 5v14M5 12h14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </motion.span>
       </button>
@@ -66,7 +80,7 @@ function Accordion({ title, children }) {
 }
 
 /* ---------- ServiceCard (compact + responsive) ---------- */
-function ServiceCard({ title, Icon, children, accent = "from-indigo-50 to-indigo-100" }) {
+function ServiceCard({ title, Icon, children, accent = "from-indigo-50 to-indigo-100" }: ServiceCardProps) {
   const reduce = useReducedMotion();
   return (
     <motion.article

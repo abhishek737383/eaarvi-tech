@@ -12,7 +12,7 @@ type FormState = {
   message: string;
 };
 
-export default function ContactSimple(): JSX.Element {
+export default function ContactSimple() {
   const [form, setForm] = useState<FormState>({
     name: "",
     org: "",

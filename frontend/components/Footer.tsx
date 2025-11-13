@@ -5,34 +5,41 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Mail, Phone, ShieldCheck, ArrowUpRight, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
-  const [toast, setToast] = useState(null);
+  const [toast, setToast] = useState<string | null>(null);
   const reduce = useReducedMotion();
 
-  function showToast(message) {
+  function showToast(message: string) {
     setToast(message);
-    setTimeout(() => setToast(null), 2600);
+    // use window.setTimeout for proper DOM typing
+    window.setTimeout(() => setToast(null), 2600);
   }
 
-  async function copy(text, label) {
+  async function copy(text: string, label: string): Promise<void> {
     try {
       await navigator.clipboard.writeText(text);
       showToast(`${label} copied`);
-    } catch (e) {
-      // fallback: select and prompt (rare case)
+    } catch (e: unknown) {
+      // fallback message
       showToast("Copy failed — please copy manually");
     }
   }
 
-  const enter = reduce ? {} : { initial: { y: 6, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { duration: 0.28 } };
+  // motion props (omit when reduced motion is requested)
+  const enter = reduce
+    ? undefined
+    : {
+        initial: { y: 6, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { duration: 0.28 },
+      };
 
   return (
     <footer className="w-full border-t border-zinc-200 dark:border-zinc-800 bg-transparent">
-      {/* full-width background strip */}
       <div className="w-full bg-gradient-to-b from-white/40 to-transparent dark:from-zinc-900/40">
         {/* centered inner container */}
-        <div className="mx-full px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mx-full  px-4 sm:px-6 lg:px-8 py-8">
           <motion.div
-            {...enter}
+            {...(enter ?? {})}
             className="relative overflow-hidden rounded-2xl bg-white/60 dark:bg-zinc-900/50 p-5 md:p-6 shadow-sm backdrop-blur-sm"
           >
             <div className="absolute -right-16 -top-10 hidden md:block w-44 h-44 rounded-full bg-gradient-to-tr from-indigo-200/40 to-rose-200/10 blur-3xl pointer-events-none" />
@@ -113,7 +120,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  {/* social icons - always visible on mobile as icons */}
+                  {/* social icons - visible on mobile as icons */}
                   <a
                     href="https://www.linkedin.com/company/eaarvitech"
                     target="_blank"
@@ -125,7 +132,7 @@ export default function Footer() {
                   </a>
 
                   <a
-                    href="https://www.youtube.com/channel/UCXXXXX" // replace as needed
+                    href="https://www.youtube.com/channel/UCXXXXX"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"
@@ -164,6 +171,8 @@ export default function Footer() {
       <AnimatePresence>
         {toast && (
           <motion.div
+            role="status"
+            aria-live="polite"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}

@@ -1,14 +1,29 @@
-// "use client" if using App Router and framer-motion on the page
 "use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play } from "lucide-react"; // optional - install lucide-react or remove
+import { Play } from "lucide-react";
 
-// If you already have a YouTubeEmbed component you can keep it.
-// This file includes a small VideoCard + VideoModal to lazy-load iframe thumbnails.
+/**
+ * Home page with video cards and modal — App Router (client component)
+ */
 
-function VideoCard({ id, title, onOpen }) {
+/* --- Types --- */
+type Video = { id: string; title: string };
+
+type VideoCardProps = {
+  id: string;
+  title: string;
+  onOpen: (id: string) => void;
+};
+
+type VideoModalProps = {
+  id: string | null;
+  onClose: () => void;
+};
+
+/* --- Components --- */
+function VideoCard({ id, title, onOpen }: VideoCardProps) {
   const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
   return (
@@ -20,7 +35,6 @@ function VideoCard({ id, title, onOpen }) {
       aria-label={`Open ${title}`}
     >
       <div className="relative aspect-video bg-slate-100">
-        {/* thumbnail */}
         <img
           src={thumb}
           alt={title}
@@ -28,7 +42,6 @@ function VideoCard({ id, title, onOpen }) {
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
         />
 
-        {/* glassy play button */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm w-14 h-14 shadow-lg">
             <Play className="w-6 h-6 text-white" />
@@ -44,7 +57,7 @@ function VideoCard({ id, title, onOpen }) {
   );
 }
 
-function VideoModal({ id, onClose }) {
+function VideoModal({ id, onClose }: VideoModalProps) {
   return (
     <AnimatePresence>
       {id && (
@@ -70,7 +83,6 @@ function VideoModal({ id, onClose }) {
             aria-modal="true"
           >
             <div className="aspect-video bg-black">
-              {/* lazy-loaded iframe */}
               <iframe
                 title="YouTube preview"
                 src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
@@ -94,13 +106,14 @@ function VideoModal({ id, onClose }) {
   );
 }
 
+/* --- Page --- */
 export default function Home() {
-  const videos = [
+  const videos: Video[] = [
     { id: "QkVBNV-f5uM", title: "eAarvi Intro" },
     { id: "1WK85VuIchM", title: "Training sample" },
   ];
 
-  const [openVideo, setOpenVideo] = useState(null);
+  const [openVideo, setOpenVideo] = useState<string | null>(null);
 
   return (
     <main className="space-y-12 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
