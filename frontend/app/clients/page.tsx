@@ -18,7 +18,7 @@ type CaseStudy = {
 const CASES: CaseStudy[] = [
   {
     id: "sanjay",
-    title: "Sanjay Mechanical — Building a Productive Sales Team",
+    title: "Sanjay Mechanical  Building a Productive Sales Team",
     client: "Sanjay Mechanical Works",
     contact: "Mr. Sanjay Nair, Managing Partner",
     engagement: "3-Month Sales Consulting & Team Development",
@@ -31,7 +31,7 @@ const CASES: CaseStudy[] = [
   },
   {
     id: "planet",
-    title: "Planet Geotech — GIS Project & Tender Success",
+    title: "Planet Geotech  GIS Project & Tender Success",
     client: "Planet Geotech Pvt. Ltd.",
     contact: "Project Director",
     engagement: "Business Consulting & Project Development Support",
@@ -44,7 +44,7 @@ const CASES: CaseStudy[] = [
   },
   {
     id: "saitech",
-    title: "Saitech Instruments — Instrumentation Sales Transformation",
+    title: "Saitech Instruments  Instrumentation Sales Transformation",
     client: "Saitech Instruments",
     contact: "Mr. Sachin Khot, Managing Director",
     engagement: "Freelance Sales Consulting & Channel Development",
@@ -57,7 +57,7 @@ const CASES: CaseStudy[] = [
   },
   {
     id: "unify",
-    title: "Unify Engineers — Training & Export Growth",
+    title: "Unify Engineers  Training & Export Growth",
     client: "Unify Engineers",
     contact: "Sales Head",
     engagement: "Corporate Sales Training Program",
