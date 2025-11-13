@@ -1,32 +1,62 @@
 @import "tailwindcss";
 
-
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* root variables (light default) */
 :root {
-  --background: #f8f2f2;
-  --foreground: #0f0f0f;
+  --background: #f8f2f2; /* desired page color */
+  --foreground: #0a0a0a;
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+
+  /* allow browser to know we support both color schemes if you implement dark */
+  color-scheme: light dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* dark theme (override only if you want a dark color set) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fcdfdf;
-    --foreground: #050505;
+    /* change these only if you want a different dark background */
+    --background: #0a0a0a; 
+    --foreground: #ededed;
   }
 }
 
+/* Put the background on html & the Next.js root (#__next) so it is always visible.
+   Use 100dvh where supported to handle mobile browser address bar (and fallback to 100vh). */
+html, #__next {
+  min-height: 100dvh;    /* modern */
+  min-height: 100vh;     /* fallback */
+  height: 100%;
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* keep body transparent so the root background shows through */
 body {
-  background: var(--background);
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  background: transparent;     /* IMPORTANT: don't set white here */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+/* if you have a top-level page container, keep it transparent by default */
+main, .page-root {
+  background: transparent;
+  min-height: 100dvh;
+}
+
+/* Optional utility: sometimes a component may force white. When you need a wrapper
+   to guarantee the site background, use this class in HTML: <div class="site-bg"> */
+.site-bg {
+  background-color: var(--background);
+  min-height: 100dvh;
 }
