@@ -7,7 +7,7 @@
 
 
 :root {
-  --background: #f7dddd;
+  --background: #c2eeff;
   --foreground: #171717;
 }
 
@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fae0e0;
+    --background: #c2eeff;
     --foreground: #080808;
   }
 }

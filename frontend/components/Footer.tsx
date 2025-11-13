@@ -134,7 +134,7 @@ export default function Footer() {
                   </a>
 
                   <a
-                    href="https://www.youtube.com/channel/UCXXXXX"
+                    href="https://youtu.be/QkVBNV-f5uM"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"

@@ -181,7 +181,7 @@ export default function Home() {
           eAarvi Tech is a Performance Enablement Consulting company specializing in Sales Training, Consulting, and
           Technical Software Training for corporates, working professionals, and students. Our programs are designed by
           <span className="font-medium"> 20+ years experienced professionals</span> who have learned sales and business
-          growth on the field — not in classrooms.
+          growth on the field  not in classrooms.
         </p>
       </motion.section>
 
@@ -243,7 +243,7 @@ export default function Home() {
           “The difference between classroom training and eAarvi’s field-based approach is unbelievable. Our team learned
           what actually works in the market.”
         </blockquote>
-        <cite className="block mt-3 font-medium">— Sanjay Nair — Sanjay Mechanicals</cite>
+        <cite className="block mt-3 font-medium">  Sanjay Nair , Sanjay Mechanicals</cite>
       </motion.section>
 
       {/* CONTACT CTA */}
