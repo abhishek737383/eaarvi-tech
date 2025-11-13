@@ -134,7 +134,7 @@ export default function ServicesPage() {
                 </a>
 
                 <a
-                  href="/brochure.pdf"
+                  href="/contact"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-zinc-200 md:dark:border-zinc-700 px-3 py-2 font-medium hover:bg-zinc-100 md:dark:hover:bg-zinc-800 transition-colors"
@@ -257,7 +257,7 @@ export default function ServicesPage() {
 
             <div className="mt-6 flex gap-3 flex-wrap">
               <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-white font-medium shadow">Request Custom Program</a>
-              <a href="/brochure.pdf" className="inline-flex items-center gap-2 rounded-full border border-zinc-200 md:dark:border-zinc-700 px-4 py-2 font-medium hover:bg-zinc-100 md:dark:hover:bg-zinc-800" target="_blank" rel="noreferrer"><BookOpen className="h-4 w-4" /> Download Syllabus</a>
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-full border border-zinc-200 md:dark:border-zinc-700 px-4 py-2 font-medium hover:bg-zinc-100 md:dark:hover:bg-zinc-800" target="_blank" rel="noreferrer"><BookOpen className="h-4 w-4" /> Download Syllabus</a>
             </div>
           </motion.div>
         </motion.section>
