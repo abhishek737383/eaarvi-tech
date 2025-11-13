@@ -117,8 +117,8 @@ export default function Footer() {
               {/* right - legal + social */}
               <div className="flex flex-col items-start md:items-end gap-3">
                 <div className="flex gap-3">
-                  <a href="/privacy" className="text-sm text-zinc-600 md:dark:text-zinc-300 hover:text-indigo-600">Privacy Policy</a>
-                  <a href="/terms" className="text-sm text-zinc-600 md:dark:text-zinc-300 hover:text-indigo-600">Terms of Service</a>
+                  <a href="#" className="text-sm text-zinc-600 md:dark:text-zinc-300 hover:text-indigo-600">Privacy Policy</a>
+                  <a href="#" className="text-sm text-zinc-600 md:dark:text-zinc-300 hover:text-indigo-600">Terms of Service</a>
                 </div>
 
                 <div className="flex items-center gap-3">
