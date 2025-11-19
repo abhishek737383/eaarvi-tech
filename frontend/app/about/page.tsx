@@ -2,203 +2,471 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Users, Target, Zap, Calendar } from "lucide-react";
+import { 
+  Target, 
+  Users, 
+  Zap, 
+  Briefcase, 
+  Globe, 
+  TrendingUp, 
+  Star, 
+  CheckCircle,
+  ArrowRight,
+  BookOpen,
+  Shield,
+  Lightbulb
+} from "lucide-react";
 
 export default function AboutPage() {
   const currentYear = new Date().getFullYear();
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerChildren = {
+    initial: { opacity: 0 },
+    whileInView: { 
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    },
+    viewport: { once: true }
+  };
+
+  const services = [
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Field-experienced sales training",
+      description: "Practical training from professionals with real field experience"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "On-field coaching",
+      description: "Real-time coaching during customer visits and presentations"
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Lead generation & closures",
+      description: "Complete support from prospecting to deal closure"
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: "Territory development",
+      description: "Market entry strategy and new geography penetration"
+    },
+    {
+      icon: <Briefcase className="w-6 h-6" />,
+      title: "Sales consulting",
+      description: "3-month structured consulting engagement"
+    },
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: "Software training",
+      description: "All kind of Design engineering software training"
+    }
+  ];
+
+  const whatWeDo = [
+    {
+      title: "Corporate Sales Training",
+      description: "Practical, field-focused programs on prospecting, pipeline creation, negotiation, forecasting, objection handling, and closures tailored to your business.",
+      icon: "🎯"
+    },
+    {
+      title: "On-Field Sales Coaching & Handholding",
+      description: "We accompany your team on customer visits, calls, and presentations to correct their approach in real time and build confidence.",
+      icon: "🚀"
+    },
+    {
+      title: "3-Month Extended Sales Consulting",
+      description: "A structured engagement covering sales process diagnosis, funnel setup, forecasting, team reviews, and territory growth ensuring measurable improvement.",
+      icon: "📈"
+    }
+  ];
+
+  const whoWeServe = [
+    "Corporates",
+    "Working Professionals",
+    "Students & Institutes",
+    "Engineering & Technical Teams"
+  ];
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-zinc-50 md:dark:from-zinc-900 md:dark:to-zinc-800 py-12">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* HERO */}
-        <section className="relative overflow-hidden rounded-3xl bg-white/60 md:dark:bg-zinc-900/50 p-8 md:p-12 shadow-xl backdrop-blur-sm">
-          <div className="absolute -left-32 -top-20 h-64 w-64 rounded-full bg-gradient-to-tr from-indigo-300/30 via-pink-200/20 to-rose-200/0 blur-3xl pointer-events-none" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-16 md:py-15">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium text-sm mb-6"
             >
-              <h1 className="text-3xl md:text-4xl font-extrabold">Who We Are</h1>
-              <p className="mt-4 text-zinc-600 md:dark:text-zinc-300 leading-relaxed">
-                eAarvi Tech is a Performance Enablement & Training Consulting organization committed to transforming sales teams, professionals,
-                and students into confident, performance-driven individuals.
-              </p>
-
-              <p className="mt-3 text-zinc-600 md:dark:text-zinc-300 leading-relaxed">
-                Our programs are designed by professionals with over <strong>20 years</strong> of real sales and business experience — not just theory-based trainers.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-white font-medium shadow hover:scale-[1.012] transition-transform"
-                >
-                  Schedule a Discussion
-                </a>
-                <a
-                  href="/services"
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 font-medium md:dark:border-zinc-700 hover:bg-zinc-100 md:dark:hover:bg-zinc-800 transition"
-                >
-                  Explore Programs
-                </a>
-              </div>
+              <Star className="w-4 h-4" />
+              About eAarvi Tech
             </motion.div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+              Why Aarvi • <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">What Aarvi</span> • Who Aarvi
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              Transforming engineering and tech companies through <span className="font-semibold text-slate-900">practical, field-experienced</span> sales training and consulting.
+            </p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="order-first md:order-last"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-8 flex flex-wrap gap-4 justify-center"
             >
-              <div className="aspect-[16/10] w-full rounded-xl border border-zinc-100 md:dark:border-zinc-800 p-4 flex items-center justify-center bg-gradient-to-br from-white to-zinc-50 md:dark:from-zinc-900/40">
-                <div className="w-full max-w-sm">
-                  <div className="rounded-lg overflow-hidden shadow-lg">
-                    <div className="bg-gradient-to-br from-indigo-600 to-purple-500 p-8 text-white">
-                      <h3 className="text-lg font-semibold">Performance & Field-led Training</h3>
-                      <p className="mt-2 text-sm text-white/90">Practical role-plays, case-based learning and live field coaching.</p>
-                    </div>
-                    <div className="p-4 bg-white md:dark:bg-zinc-900">
-                      <div className="flex items-center gap-3">
-                        <div className="rounded-full bg-indigo-50 md:dark:bg-indigo-900/30 p-2">
-                          <Briefcase className="h-5 w-5 text-indigo-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium">Field Experience</div>
-                          <div className="text-xs text-zinc-500 md:dark:text-zinc-400">Trainers with real sales experience</div>
-                        </div>
-                      </div>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300"
+              >
+                <Zap className="w-5 h-5" />
+                Schedule a Discussion
+                <ArrowRight className="w-5 h-5" />
+              </motion.a>
+              
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/services"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-slate-700 font-semibold shadow-xl hover:shadow-2xl border border-slate-200 transition-all duration-300"
+              >
+                <BookOpen className="w-5 h-5" />
+                Explore Programs
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-                      <div className="mt-4 grid grid-cols-2 gap-3 text-xs text-zinc-500 md:dark:text-zinc-400">
-                        <div className="flex items-center gap-2">
-                          <Users className="h-4 w-4" />
-                          <span>Teams & Individuals</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4" />
-                          <span>On-site & Live</span>
-                        </div>
+      {/* Services Grid */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            {...fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Comprehensive Performance Solutions
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Everything you need to transform your sales team and business performance
+            </p>
+          </motion.div>
 
-                        <div className="flex items-center gap-2">
-                          <Target className="h-4 w-4" />
-                          <span>Outcome-focused</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Zap className="h-4 w-4" />
-                          <span>Measurable Results</span>
-                        </div>
-                      </div>
-                    </div>
+          <motion.div
+            {...staggerChildren}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-slate-100 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white"
+                  >
+                    {service.icon}
+                  </motion.div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Philosophy & Vision */}
-        <section className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Why Aarvi Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow"
+            {...fadeInUp}
+            className="text-center mb-12"
           >
-            <h4 className="text-sm font-semibold">Our Philosophy</h4>
-            <p className="mt-3 text-zinc-600 md:dark:text-zinc-300 text-sm leading-relaxed">
-              Sales and performance cannot be learned in theory. It’s learned in the field — with real customers, objections, and outcomes. All our programs
-              include practical role-plays, case-based learning, and live field coaching.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Aarvi
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow"
-          >
-            <h4 className="text-sm font-semibold">Our Vision</h4>
-            <p className="mt-3 text-zinc-600 md:dark:text-zinc-300 text-sm leading-relaxed">
-              To empower professionals, students, and organizations to achieve measurable business performance through practical, outcome-oriented learning and consulting.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow"
-          >
-            <h4 className="text-sm font-semibold">Our Approach</h4>
-            <ol className="mt-3 list-decimal list-inside text-sm text-zinc-600 md:dark:text-zinc-300 leading-relaxed">
-              <li>Diagnose – Identify gaps in your sales process or team performance</li>
-              <li>Design – Tailored training content and approach per team or industry</li>
-              <li>Deliver – Field-experienced trainers conduct on-site and live modules</li>
-              <li>Drive – Extended engagement with measurable results and reports</li>
-            </ol>
-          </motion.div>
-        </section>
-
-        {/* Founder */}
-        <section className="mt-10 rounded-2xl bg-gradient-to-br from-white/60 to-zinc-50/60 md:dark:from-zinc-900/40 md:dark:to-zinc-800/40 p-6 shadow-md">
-          <div className="md:flex md:items-center md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ x: -8, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex-shrink-0"
+              {...fadeInUp}
+              className="space-y-6"
             >
-              <div className="h-36 w-36 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-500 flex items-center justify-center text-white text-2xl font-semibold shadow-lg">
-                {/* placeholder for founder image or initials */}
-                YN
-              </div>
-            </motion.div>
-
-            <div className="mt-4 md:mt-0">
-              <h3 className="text-xl font-semibold">About the Founder</h3>
-              <p className="mt-2 text-sm text-zinc-600 md:dark:text-zinc-300 leading-relaxed">
-                Mr. Yateendra Shrivastava , Founder & Lead Trainer at eAarvi Tech, brings over 20 years of field sales and business management experience across engineering,
-                construction, and technology industries. He has led high-performing sales teams, developed channel networks, and built practical training models
-                that deliver measurable sales outcomes.
+              <p className="text-lg text-slate-300 leading-relaxed">
+                eAarvi Tech exists to solve the real challenges engineering and technical companies face on the field. Sales teams struggle with prospecting, follow-ups, forecasting, objections, closures, and entering new geographies and we step in exactly where they need help the most.
+              </p>
+              
+              <p className="text-lg text-slate-300 leading-relaxed">
+                We are different because our training is not theory-based. Everything is designed around your product, your customers, and your market. Our trainers come with 20+ years of real field experience, ensuring your team learns what actually works in real situations.
               </p>
 
-              <div className="mt-4 flex gap-3">
-                <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-white font-medium shadow hover:scale-[1.01] transition">
-                  Connect with Us
-                </a>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Companies choose Aarvi because we don't just "train and leave." We support, guide, and handhold your team until they start performing confidently and consistently.
+              </p>
 
-                <a href="/schedule" className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 font-medium hover:bg-zinc-100 md:dark:border-zinc-700 transition">
-                  Schedule a Discussion
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="inline-block"
+              >
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:shadow-2xl transition-all duration-300"
+                >
+                  <Lightbulb className="w-5 h-5" />
+                  Solve Your Challenges
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { number: "20+", label: "Years Experience" },
+                { number: "100+", label: "Teams Trained" },
+                { number: "∞", label: "Real Solutions" },
+                { number: "✓", label: "Proven Results" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                >
+                  <div className="text-2xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-sm text-slate-300">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Stats / footer CTA */}
-        <section className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <motion.div whileHover={{ scale: 1.03 }} className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow text-center">
-            <div className="text-2xl font-extrabold">+20</div>
-            <div className="text-sm text-zinc-500 md:dark:text-zinc-400">Years of sales experience</div>
+      {/* What Aarvi Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            {...fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              What Aarvi
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Comprehensive solutions to improve your sales performance
+            </p>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow text-center">
-            <div className="text-2xl font-extrabold">100+</div>
-            <div className="text-sm text-zinc-500 md:dark:text-zinc-400">Teams & professionals trained</div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {whatWeDo.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="group bg-gradient-to-br from-white to-blue-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-blue-100 transition-all duration-500"
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-slate-700 leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who Aarvi Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            {...fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Who Aarvi
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="rounded-xl bg-white/60 md:dark:bg-zinc-900/50 p-6 shadow text-center">
-            <div className="text-2xl font-extrabold">Measurable</div>
-            <div className="text-sm text-zinc-500 md:dark:text-zinc-400">Outcome-driven results</div>
-          </motion.div>
-        </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="space-y-6"
+            >
+              <p className="text-lg text-slate-700 leading-relaxed">
+                eAarvi Tech is founded and led by professionals with over 20 years of real sales, technical, and business development experience across engineering, construction, infrastructure, and technology industries.
+              </p>
+              
+              <p className="text-lg text-slate-700 leading-relaxed">
+                We understand the ground realities: customer objections, competitive pressure, delayed decisions, price negotiations, low follow-ups, and market expansion challenges.
+              </p>
 
-        <div className="mt-12 text-center text-sm text-zinc-500">© {currentYear} eAarvi Tech — Built for performance</div>
-      </div>
+              <div className="space-y-4">
+                <h4 className="text-xl font-semibold text-slate-900">Our purpose is to be a trusted growth partner empowering:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {whoWeServe.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center gap-3 text-slate-700"
+                    >
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-lg text-slate-700 leading-relaxed font-semibold">
+                We help you close more deals, build better teams, and grow faster using methods that have worked in real markets, not classrooms.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 text-white shadow-2xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                    <Shield className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">Trusted Expertise</h3>
+                    <p className="text-blue-100">20+ years field experience</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {[
+                    "Real market experience, not theory",
+                    "Practical, measurable outcomes",
+                    "Continuous support & guidance",
+                    "Tailored to your specific needs"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-white rounded-full" />
+                      <span className="text-blue-100">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="mt-6"
+                >
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                  >
+                    Partner With Us
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Sales Performance?
+            </h2>
+            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+              Let's discuss how our field-experienced approach can help your team close more deals and grow faster.
+            </p>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="inline-block"
+            >
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300"
+              >
+                <Zap className="w-6 h-6" />
+                Start Your Transformation
+                <ArrowRight className="w-6 h-6" />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-slate-400">
+            © {currentYear} eAarvi Tech — Built for real-world performance
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
