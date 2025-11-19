@@ -61,9 +61,9 @@ const CASES: CaseStudy[] = [
     summary:
       "We took full responsibility for developing and managing the client's sales operations — process design, weekly reviews and field coaching.",
     details:
-      "When we met Mr. Sanjay Nair, he was struggling to take his sales team on the field effectively and faced recruiting challenges due to frequent travel. Over a structured 3-month engagement, eAarvi Tech designed a clear sales process, implemented weekly review structure, and coached his team on-field. Outcome: Field productivity improved by 60%, hiring became streamlined, and an independent sales operation was established.",
+      "When we met Mr. Sanjay Nair, he was struggling to take his sales team on the field effectively and faced recruiting challenges due to frequent travel. Over a structured 3-month engagement, eAarviTech designed a clear sales process, implemented weekly review structure, and coached his team on-field. Outcome: Field productivity improved by 60%, hiring became streamlined, and an independent sales operation was established.",
     quote:
-      "I was short on time and struggling to build my sales team. eAarvi Tech's practical support and field coaching helped us establish a strong sales foundation within just a few months.",
+      "I was short on time and struggling to build my sales team. eAarviTech's practical support and field coaching helped us establish a strong sales foundation within just a few months.",
   },
   {
     id: "planet",
@@ -74,9 +74,9 @@ const CASES: CaseStudy[] = [
     summary:
       "Strategic bid preparation and tender support for a major GIS & Land Records project.",
     details:
-      "Planet Geotech partnered with eAarvi Tech to strengthen its bid for a major GIS project. Our team guided proposal positioning, documentation and tender preparation. Outcome: Planet Geotech secured the Andhra Pradesh Land Records GIS tender, expanding market presence.",
+      "Planet Geotech partnered with eAarviTech to strengthen its bid for a major GIS project. Our team guided proposal positioning, documentation and tender preparation. Outcome: Planet Geotech secured the Andhra Pradesh Land Records GIS tender, expanding market presence.",
     quote:
-      "The eAarvi Tech team worked like an internal partner — they helped us strategize, structure, and close one of our biggest GIS tenders.",
+      "The eAarviTech team worked like an internal partner — they helped us strategize, structure, and close one of our biggest GIS tenders.",
   },
   {
     id: "saitech",
@@ -89,7 +89,7 @@ const CASES: CaseStudy[] = [
     details:
       "We restructured product positioning, optimized channel performance, and implemented disciplined follow-ups. Outcome: Saitech rooted out competition in key territories and achieved steady growth in high-value projects.",
     quote:
-      "The consulting engagement with eaarvi Tech completely transformed our sales structure. We now lead our segment in key regions.",
+      "The consulting engagement with eAarviTech completely transformed our sales structure. We now lead our segment in key regions.",
   },
   {
     id: "unify",
@@ -100,7 +100,7 @@ const CASES: CaseStudy[] = [
     summary:
       "Customized technical & communication training which led to export market entry.",
     details:
-      "eAarvi Tech trained the sales team on communication, product presentation and technical sales. Post-training, Unify expanded into export markets across China and Southeast Asia. Outcome: improved confidence, client communications, and measurable export business growth.",
+      "eAarviTech trained the sales team on communication, product presentation and technical sales. Post-training, Unify expanded into export markets across China and Southeast Asia. Outcome: improved confidence, client communications, and measurable export business growth.",
     quote:
       "Our team's approach to customer engagement completely changed after the training. Today, we're proudly exporting our products to new global markets.",
   },
@@ -109,7 +109,7 @@ const CASES: CaseStudy[] = [
 const VIDEOS: Video[] = [
   {
     id: "QkVBNV-f5uM",
-    title: "eAarvi Tech - Company Introduction",
+    title: "eAarviTech - Company Introduction",
     description: "Learn about our mission and field-experienced approach",
     category: "Company"
   },
@@ -172,8 +172,8 @@ const BROCHURES: Brochure[] = [
     id: "2",
     title: "Training Programs Catalog",
     description: "Detailed catalog of all our training programs and pricing",
-    image: "/2Brochure.jpg",
-    file: "/2Brochure.jpg"
+    image: "2Brochure.jpg",
+    file: "eAARVIBrochure.pdf"
   }
 ];
 
@@ -215,7 +215,7 @@ function VideoCard({ video, onOpen }: { video: Video; onOpen: (video: Video) => 
         <p className="text-slate-600 text-sm mb-3 line-clamp-2">{video.description}</p>
         <div className="flex items-center justify-between">
           <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">{video.category}</span>
-          <span className="text-slate-500 text-xs">eAarvi Tech</span>
+          <span className="text-slate-500 text-xs">eAarviTech</span>
         </div>
       </div>
     </motion.div>
@@ -865,7 +865,7 @@ export default function GalleryPage() {
               Ready to Create Your Success Story?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join the growing list of engineering and tech companies that have transformed their sales performance with eAarvi Tech.
+              Join the growing list of engineering and tech companies that have transformed their sales performance with eAarviTech.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
@@ -899,7 +899,7 @@ export default function GalleryPage() {
       <footer className="py-8 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-400">
-            © {new Date().getFullYear()} eAarvi Tech — Real results, measurable growth
+            © {new Date().getFullYear()} eAarviTech — Real results, measurable growth
           </p>
         </div>
       </footer>

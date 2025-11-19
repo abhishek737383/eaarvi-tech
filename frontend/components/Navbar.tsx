@@ -44,7 +44,7 @@ export default function Navbar() {
           <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
             <Image
               src="/logo.jpeg"
-              alt="eAarvi Tech Logo"
+              alt="eAarviTech Logo"
               fill
               className="object-contain rounded-lg shadow-sm"
               sizes="(max-width: 768px) 40px, 48px"
@@ -53,7 +53,7 @@ export default function Navbar() {
           </div>
 
           <div className="leading-tight">
-            <div className="font-semibold text-slate-900 text-lg tracking-tight">eAarvi Tech</div>
+            <div className="font-semibold text-slate-900 text-lg tracking-tight">eAarviTech</div>
             <div className="text-xs text-slate-500">Performance Enablement</div>
           </div>
         </Link>

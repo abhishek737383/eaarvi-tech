@@ -118,7 +118,7 @@ export default function AboutPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium text-sm mb-6"
             >
               <Star className="w-4 h-4" />
-              About eAarvi Tech
+              About eAarviTech
             </motion.div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
@@ -230,7 +230,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <p className="text-lg text-slate-300 leading-relaxed">
-                eAarvi Tech exists to solve the real challenges engineering and technical companies face on the field. Sales teams struggle with prospecting, follow-ups, forecasting, objections, closures, and entering new geographies and we step in exactly where they need help the most.
+                eAarviTech exists to solve the real challenges engineering and technical companies face on the field. Sales teams struggle with prospecting, follow-ups, forecasting, objections, closures, and entering new geographies and we step in exactly where they need help the most.
               </p>
               
               <p className="text-lg text-slate-300 leading-relaxed">
@@ -345,7 +345,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <p className="text-lg text-slate-700 leading-relaxed">
-                eAarvi Tech is founded and led by professionals with over 20 years of real sales, technical, and business development experience across engineering, construction, infrastructure, and technology industries.
+                eAarviTech is founded and led by professionals with over 20 years of real sales, technical, and business development experience across engineering, construction, infrastructure, and technology industries.
               </p>
               
               <p className="text-lg text-slate-700 leading-relaxed">
@@ -463,7 +463,7 @@ export default function AboutPage() {
       <footer className="py-8 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-400">
-            © {currentYear} eAarvi Tech — Built for real-world performance
+            © {currentYear} eAarviTech — Built for real-world performance
           </p>
         </div>
       </footer>

@@ -58,7 +58,7 @@ export default function Footer() {
                 </motion.div>
 
                 <div>
-                  <div className="text-sm font-semibold text-slate-900 md:dark:text-white">eAarvi Tech</div>
+                  <div className="text-sm font-semibold text-slate-900 md:dark:text-white">eAarviTech</div>
                   <div className="text-xs text-zinc-600 md:dark:text-zinc-400">Performance Enablement & Training</div>
 
                   <div className="mt-3 flex items-center gap-2 text-xs">
@@ -166,7 +166,7 @@ export default function Footer() {
               {/* owner + legal + developer credit */}
               <div className="text-center sm:text-right w-full sm:w-auto">
                 <div className="text-xs text-zinc-600 md:dark:text-zinc-300">
-                  © {year} eAarvi Tech. All rights reserved.
+                  © {year} eAarviTech. All rights reserved.
                 </div>
 
                 <div className="mt-1 flex items-center justify-center sm:justify-end gap-2 text-xs text-zinc-500 md:dark:text-zinc-400">

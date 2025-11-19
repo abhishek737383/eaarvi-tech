@@ -43,7 +43,7 @@ export default function ContactSimple() {
 
   function buildSubject() {
     const who = form.name ? ` — ${form.name}` : "";
-    return `eAarvi Tech Inquiry: ${form.program}${who}`;
+    return `eAarviTech Inquiry: ${form.program}${who}`;
   }
 
   function buildBody() {
@@ -58,7 +58,7 @@ export default function ContactSimple() {
       form.message || "-",
       "",
       "--",
-      "Sent from eAarvi Tech website",
+      "Sent from eAarviTech website",
     ].join("\n");
   }
 
@@ -171,7 +171,7 @@ export default function ContactSimple() {
           </p>
         </motion.section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -228,7 +228,7 @@ export default function ContactSimple() {
 
               {/* Why Choose Section */}
               <div className="mt-8 pt-8 border-t border-slate-700">
-                <h3 className="font-semibold text-slate-300 mb-4">Why Choose eAarvi Tech?</h3>
+                <h3 className="font-semibold text-slate-300 mb-4">Why Choose eAarviTech?</h3>
                 <div className="space-y-3">
                   {[
                     "20+ Years Field Experience",
@@ -276,7 +276,7 @@ export default function ContactSimple() {
                   </motion.div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">Message Sent Successfully!</h3>
                   <p className="text-slate-600 mb-6">
-                    Thank you for contacting eAarvi Tech. We've opened your email client to complete the process. 
+                    Thank you for contacting eAarviTech. We've opened your email client to complete the process. 
                     We'll get back to you within 24 hours.
                   </p>
                   <motion.button

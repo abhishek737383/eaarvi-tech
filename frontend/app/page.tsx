@@ -53,7 +53,7 @@ function VideoCard({ id, title, onOpen }: VideoCardProps) {
       <div className="p-4 bg-white">
         <h3 className="font-semibold text-slate-900 text-base mb-2 text-left leading-tight">{title}</h3>
         <div className="flex items-center justify-between text-xs text-slate-600">
-          <span>eAarvi Tech</span>
+          <span>eAarviTech</span>
           <span>• 1.2K views</span>
         </div>
       </div>
@@ -291,7 +291,7 @@ function PricingTable() {
 
 export default function Home() {
   const videos: Video[] = [
-    { id: 'QkVBNV-f5uM', title: 'eAarvi Tech - Company Introduction' },
+    { id: 'QkVBNV-f5uM', title: 'eAarviTech - Company Introduction' },
     { id: '1WK85VuIchM', title: 'Sales Training Sample Session' },
   ];
 
@@ -330,7 +330,7 @@ export default function Home() {
           className="max-w-4xl mx-auto text-center"
         >
           <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed font-medium">
-            At eAarvi Tech, we help engineering and tech companies close more deals and grow faster through practical 
+            At eAarviTech, we help engineering and tech companies close more deals and grow faster through practical 
             sales training, lead generation support, and software training programs.
           </p>
         </motion.div>
@@ -535,7 +535,7 @@ export default function Home() {
               transition={{ duration: 3, repeat: Infinity }}
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
             >
-              eAarvitech — Empowering Business Excellence
+              eAarviTech — Empowering Business Excellence
             </motion.h2>
             <p className="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto mb-6 sm:mb-8">
               Enabling your people and your business to perform better, faster, and smarter

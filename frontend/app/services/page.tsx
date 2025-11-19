@@ -44,7 +44,7 @@ export default function ServicesPage() {
     {
       icon: <Target className="w-6 h-6" />,
       title: "Sales Training for Engineering & Technical Teams",
-      description: "eAarvi Tech provides industry-specific sales training designed for engineering, industrial, and technology companies.",
+      description: "eAarviTech provides industry-specific sales training designed for engineering, industrial, and technology companies.",
       details: "We help your sales team improve prospecting, lead generation, pipeline creation, technical presentations, objections, and closures using your real products and customers.",
       keywords: ["engineering sales training", "technical sales training India", "B2B sales training for engineers", "industrial sales training"],
       gradient: "from-blue-500 to-cyan-500",
@@ -89,7 +89,7 @@ export default function ServicesPage() {
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "Engineering Software Training for Corporates and Students",
-      description: "eAarvi Tech offers professional software training for corporates, working professionals, and students.",
+      description: "eAarviTech offers professional software training for corporates, working professionals, and students.",
       details: "All kind of Design engineering and engineering software training including Structural design softwares, CAD and BIM software trainings and many more.",
       keywords: ["engineering software training", "CAD training", "BIM training", "corporate technical training"],
       gradient: "from-teal-500 to-green-500",
@@ -476,7 +476,7 @@ export default function ServicesPage() {
       <footer className="py-8 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-400">
-            © {new Date().getFullYear()} eAarvi Tech — Built for real-world performance
+            © {new Date().getFullYear()} eAarviTech — Built for real-world performance
           </p>
         </div>
       </footer>
