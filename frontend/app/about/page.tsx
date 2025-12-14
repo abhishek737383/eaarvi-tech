@@ -14,7 +14,9 @@ import {
   ArrowRight,
   BookOpen,
   Shield,
-  Lightbulb
+  Lightbulb,
+  ExternalLink,
+  Briefcase as BriefcaseIcon
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -94,6 +96,30 @@ export default function AboutPage() {
     "Working Professionals",
     "Students & Institutes",
     "Engineering & Technical Teams"
+  ];
+
+  const technologyPartners = [
+    {
+      name: "ESurveying Softech (India) Pvt. Ltd.",
+      role: "Business Development Partner",
+      website: "https://esurveying.net",
+      products: [
+        "Survey and Mapping Softwares",
+        "Road and Highway design Softwares",
+        "Hydraulics and Water distribution"
+      ]
+    },
+    {
+      name: "Unify & Unify Enterprises",
+      role: "Business Development Partner",
+      website: "https://www.unifyandunify.com",
+      products: [
+        "Snap Button Machines",
+        "Riveting Machines",
+        "Manual Button Fixing Machines",
+        "Snap Buttons and fastener accessories"
+      ]
+    }
   ];
 
   return (
@@ -207,6 +233,89 @@ export default function AboutPage() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Technology Partners Section */}
+          <motion.div
+            {...fadeInUp}
+            className="mt-20 pt-16 border-t border-slate-200"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Our Technology Partners
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                We work with selected engineering and technology companies as their authorised business development partner, helping them expand into new markets and create conversion-ready opportunities.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {technologyPartners.map((partner, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  whileHover={{ y: -5 }}
+                  className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 shadow-lg hover:shadow-xl border border-slate-200 transition-all duration-300"
+                >
+                  <div className="flex flex-col h-full">
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="text-xl font-bold text-slate-900">
+                          {partner.name}
+                        </h3>
+                        <motion.a
+                          href={partner.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                          aria-label={`Visit ${partner.name} website`}
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </motion.a>
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                        <BriefcaseIcon className="w-4 h-4" />
+                        {partner.role}
+                      </div>
+                    </div>
+
+                    <div className="mb-4 flex-grow">
+                      <h4 className="font-semibold text-slate-800 mb-3">Products & Offerings:</h4>
+                      <ul className="space-y-2">
+                        {partner.products.map((product, idx) => (
+                          <motion.li
+                            key={idx}
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="flex items-start gap-2 text-slate-700"
+                          >
+                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                            <span>{product}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <motion.a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium group"
+                    >
+                      <span>Visit Website</span>
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </motion.a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
