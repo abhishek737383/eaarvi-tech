@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/partners", label: "Partners" }, // Add this line
   { href: "/clients", label: "NewsRoom" },
   { href: "/contact", label: "Contact" },
 ];
