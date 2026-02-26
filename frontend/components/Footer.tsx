@@ -70,7 +70,7 @@ export default function Footer() {
 
                     <a href="tel:+918411965315" className="inline-flex items-center gap-2 ml-2">
                       <Phone className="w-4 h-4 text-indigo-600" />
-                      <span className="hidden sm:inline text-zinc-600 md:dark:text-zinc-300">+91-84339-65315</span>
+                      <span className="hidden sm:inline text-zinc-600 md:dark:text-zinc-300">+91-8411965315</span>
                       <span className="sm:hidden text-zinc-600 md:dark:text-zinc-300">Call</span>
                     </a>
                   </div>
