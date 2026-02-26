@@ -182,7 +182,7 @@ function PricingTable() {
           >
             <p className="text-sm text-yellow-800 text-center">
               <strong>For on-premise offline sessions and pricing</strong><br />
-              Please reach us on +91-8433965315 or mail us on Business@eaarvitech.com
+              Please reach us on +91-8411965315 or mail us on Business@eaarvitech.com
             </p>
           </motion.div>
         </motion.div>
@@ -242,7 +242,7 @@ function PricingTable() {
               <strong>Team of 4+ gets special discount!</strong>
             </p>
             <motion.a
-              href="tel:+918433965315"
+              href="tel:+918411965315"
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-slate-900 to-slate-700 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             >
@@ -268,11 +268,11 @@ function PricingTable() {
           <div className="flex flex-wrap gap-4 justify-center">
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="tel:+918433965315"
+              href="tel:+918411965315"
               className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
-              Call +91-8433965315
+              Call +91-8411965315
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}

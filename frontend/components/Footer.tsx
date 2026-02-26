@@ -68,7 +68,7 @@ export default function Footer() {
                       <span className="sm:hidden text-zinc-600 md:dark:text-zinc-300">Email</span>
                     </a>
 
-                    <a href="tel:+918433965315" className="inline-flex items-center gap-2 ml-2">
+                    <a href="tel:+918411965315" className="inline-flex items-center gap-2 ml-2">
                       <Phone className="w-4 h-4 text-indigo-600" />
                       <span className="hidden sm:inline text-zinc-600 md:dark:text-zinc-300">+91-84339-65315</span>
                       <span className="sm:hidden text-zinc-600 md:dark:text-zinc-300">Call</span>
@@ -91,7 +91,7 @@ export default function Footer() {
                   </button>
 
                   <button
-                    onClick={() => copy("+918433965315", "Phone")}
+                    onClick={() => copy("+918411965315", "Phone")}
                     className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/40 md:dark:bg-zinc-800/40 hover:bg-zinc-100 md:dark:hover:bg-zinc-800 transition text-sm"
                     aria-label="Copy phone"
                   >

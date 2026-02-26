@@ -206,7 +206,7 @@ export default function ContactSimple() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-green-300">Call Us</h3>
-                    <p className="text-slate-300 mt-1">+91-8433965315</p>
+                    <p className="text-slate-300 mt-1">+91-8411965315</p>
                     <p className="text-slate-400 text-sm">Mon-Fri from 9am-6pm</p>
                   </div>
                 </motion.div>
